@@ -1,8 +1,8 @@
 <template>
   <div class="box">
     <div class="title">
-      <p>예약 설정</p>
-      <Toggle v-model="value" />
+      <div class="left_box">예약 설정</div>
+      <Toggle v-model="value" class="right_box" />
     </div>
     <div>
       <scroll-picker :options="options" v-model="selections" />
@@ -113,5 +113,14 @@ export default defineComponent({
 .box {
   border-radius: 10%;
   background-color: crimson;
+}
+.title {
+  height: 30px;
+}
+.left_box {
+  float: left;
+}
+.right_box {
+  float: right;
 }
 </style>

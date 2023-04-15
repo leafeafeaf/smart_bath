@@ -5,7 +5,7 @@
     <HomeBathSetting />
     <HomeCleanSetting />
     <HomeReserveSetting />
-    <img class="bathstart" src="../assets/play.png" />
+    <img class="bathstart" src="../assets/play.png" v-on:click="bStart" />
   </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
     HomeReserveSetting,
   },
   data() {},
+  methods: {
+    bStart: function () {
+      console.log("Click mbath");
+    },
+  },
 };
 </script>
 <style scoped>
@@ -35,10 +40,10 @@ export default {
   height: 2000px;
 }
 .bathstart {
-  width: 70px;
-
+  width: 50px;
   position: fixed;
-  bottom: 40px;
+  bottom: 80px;
   right: 20px;
+  z-index: 1;
 }
 </style>
