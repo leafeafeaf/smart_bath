@@ -9,10 +9,16 @@
       <button @click="clean">청소</button>
       <button @click="cap">마개</button>
     </div>
+    <Footer />
   </div>
 </template>
 <script>
+import Footer from "@/components/Footer.vue";
+
 export default {
+  components: {
+    Footer,
+  },
   methods: {
     coldWater: function () {
       console.log("냉수");

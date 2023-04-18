@@ -111,11 +111,15 @@ export default defineComponent({
 </script>
 <style scoped>
 .box {
-  border-radius: 10%;
-  background-color: crimson;
+  border-radius: 5%;
+  background-color: white;
+  margin: 3px;
+  padding: 8px;
 }
 .title {
   height: 30px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .left_box {
   float: left;

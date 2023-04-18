@@ -5,6 +5,7 @@
     <HomeBathSetting />
     <HomeCleanSetting />
     <HomeReserveSetting />
+    <Footer />
     <img class="bathstart" src="../assets/play.png" v-on:click="bStart" />
   </div>
 </template>
@@ -16,6 +17,7 @@ import HomeState from "@/components/HomeState.vue";
 import HomeBathSetting from "../components/HomeBathSetting.vue";
 import HomeCleanSetting from "../components/HomeCleanSetting.vue";
 import HomeReserveSetting from "@/components/HomeReserveSetting.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "HomeView",
@@ -25,9 +27,11 @@ export default {
     HomeBathSetting,
     HomeCleanSetting,
     HomeReserveSetting,
+    Footer,
   },
   data() {},
   methods: {
+    //목욕 시작 명령
     bStart: function () {
       console.log("Click mbath");
     },
