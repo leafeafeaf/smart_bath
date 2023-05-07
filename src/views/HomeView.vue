@@ -2,10 +2,16 @@
 <template>
   <div class="home">
     <!--HomeBath 컴포넌트에 스크롤변수와 이미지변수 전달-->
-    <HomeBath class="header" :isScroll="isScroll" :bathImg="bathImg" />
-
+    <HomeBath
+      class="header"
+      :isScroll="isScroll"
+      :bathImg="bathImg"
+      :nowTemp="nowTemp"
+      :nowWaterLevel="nowWaterLevel"
+    />
+    <!-- ++++++++양방향 데이터 바인딩 해야함+++++++++ -->
     <div class="content">
-      <HomeBathSetting />
+      <HomeBathSetting :setTemp="setTemp" :setWaterLevel="setWaterLevel" />
       <HomeCleanSetting />
       <HomeReserveSetting />
     </div>
@@ -17,7 +23,6 @@
 <script>
 // @ is an alias to /src
 import HomeBath from "@/components/HomeBath.vue";
-//import HomeState from "@/components/HomeState.vue";
 import HomeBathSetting from "../components/HomeBathSetting.vue";
 import HomeCleanSetting from "../components/HomeCleanSetting.vue";
 import HomeReserveSetting from "@/components/HomeReserveSetting.vue";
@@ -33,7 +38,6 @@ export default {
   name: "HomeView",
   components: {
     HomeBath,
-    //HomeState,
     HomeBathSetting,
     HomeCleanSetting,
     HomeReserveSetting,
@@ -50,12 +54,22 @@ export default {
     return {
       isScroll: false,
       bathImg: bathpng,
+      nowTemp: 30,
+      nowWaterLevel: 50,
+      //HomeBathSetting 컴포넌트와 주고 받을 데이터
+      setTemp: 50,
+      setWaterLevel: 80,
+      //HomeCleanSetting 컴포넌트와 주고 받을 데이터
+      cleanToggle: false,
+      cleanTime: 30,
+      //HomeReserveSetting 컴포넌트와 주고 받을 데이터
+      reserveToggle: false,
+      reserveTime: [0, 30],
     };
   },
   methods: {
     //스크롤 시 Homebath 축소
     scrollEvents: function () {
-      console.log(document.documentElement.scrollTop);
       //현재 스크롤이 본문(설정) 위치에 따라 변수값조정
       if (document.documentElement.scrollTop > 0) {
         this.isScroll = true;

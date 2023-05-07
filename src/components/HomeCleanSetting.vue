@@ -71,6 +71,13 @@ export default defineComponent({
       ...toRefs(state),
     };
   },
+  methods: {
+    //상위 컴포넌트(홈 뷰)에 정보 전송
+    sendSettingValue() {
+      this.$emit("cleanToggle", value);
+      this.$emit("cleanTime", selections);
+    },
+  },
 });
 </script>
 <style scoped>
