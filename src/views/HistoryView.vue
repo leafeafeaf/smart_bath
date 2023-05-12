@@ -38,18 +38,55 @@
         </div>
       </div>
 
-      <div>그래프</div>
+      <BarChart class="chart" />
     </div>
 
     <div class="historyList">
       <div class="title">상세 이력</div>
+      <ul style="list-style: none">
+        <li v-for="item in items" :key="item">
+          {{ item.date }} {{ item.time }} {{ item.temp }}
+          <hr />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import BarChart from "../components/BarChart.vue";
+
+export default {
+  components: {
+    BarChart,
+  },
+  data() {
+    return {
+      items: [
+        {
+          date: "4/19 17:50",
+          time: 90,
+          temp: 50,
+        },
+        {
+          date: "4/10 19:50",
+          time: 90,
+          temp: 50,
+        },
+        {
+          date: "5/19 20:50",
+          time: 90,
+          temp: 50,
+        },
+      ],
+    };
+  },
+};
 </script>
 <style scoped>
+ul {
+  padding: 0;
+}
+
 header {
   height: 50px;
   line-height: 50px;
