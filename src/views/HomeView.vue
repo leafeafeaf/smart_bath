@@ -109,7 +109,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   z-index: 1;
 }
 .bathstart {
@@ -122,5 +122,21 @@ export default {
 
 .content {
   margin-bottom: 30%;
+}
+/* 태블릿 */
+@media (min-width: 768px) {
+  .bathstart {
+    bottom: 10%;
+    right: 10%;
+  }
+}
+
+/* 데스크탑 */
+@media (min-width: 1024px) {
+  .bathstart {
+    bottom: 10%;
+    left: 50%;
+    transform: translate(700%, 0);
+  }
 }
 </style>

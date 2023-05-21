@@ -2,9 +2,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-//컴포넌트 전역 등록(토글버튼, 스크롤 픽커)
+//컴포넌트 전역 등록(토글버튼, 스크롤 픽커, 캘린더)
 import Toggle from "@vueform/toggle";
 import ScrollPicker from 'vue3-scroll-picker';
+import { setupCalendar } from 'v-calendar';
+
+
 
 /* 이모티콘 import*/
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,6 +27,7 @@ library.add(faHouse,faUser,faCheck,faGear,faBath,faTemperatureHalf,faPalette,faB
 
 const app = createApp(App);
 app.use(router);
+app.use(setupCalendar, {})
 app.component("Toggle",Toggle);
 app.component("ScrollPicker",ScrollPicker)
 app.component('font-awesome-icon', FontAwesomeIcon)

@@ -4,7 +4,7 @@
       <div class="left_box">예약 설정</div>
       <Toggle v-model="value" class="right_box" />
     </div>
-    <div style="min-height: 150px">
+    <div class="content_box" style="min-height: 150px">
       <scroll-picker
         :options="houroptions"
         v-model="hourselections"
@@ -136,10 +136,17 @@ export default defineComponent({
 .right_box {
   float: right;
 }
-.span_text {
-  line-height: 150px;
+.content_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
 }
 .scrollpicker {
   z-index: 0;
+  margin: 5% auto;
+}
+.span_text {
+  font-size: 130%;
 }
 </style>

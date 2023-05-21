@@ -4,12 +4,11 @@
       <div class="left_box">청소 설정</div>
       <Toggle v-model="value" class="right_box" />
     </div>
-    <div style="height: auto; min-height: 150px">
+    <div class="content_box">
       <scroll-picker
         :options="options"
         v-model="selections"
-        style="width: 25%"
-        class="left_box scrollpicker"
+        class="scrollpicker"
       />
       <span class="second">초</span>
     </div>
@@ -93,11 +92,18 @@ export default defineComponent({
 .right_box {
   float: right;
 }
+.content_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+}
 .second {
-  line-height: 900%;
+  font-size: 130%;
 }
 
 .scrollpicker {
   z-index: 0;
+  margin-right: 5%;
 }
 </style>

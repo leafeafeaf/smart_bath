@@ -1,20 +1,18 @@
 <!--설정 화면(테마, 알림)-->
 <template>
-  <header>
-    <router-link to="/mypage">&lt;</router-link>
-    <div class="left_box">설정</div>
-  </header>
-  <div class="content">
-    <router-link to=""
-      ><div>
-        <font-awesome-icon icon="fa-solid fa-palette" /> 테마
-      </div></router-link
-    >
-    <router-link to=""
-      ><div>
-        <font-awesome-icon icon="fa-solid fa-bell" /> 알림
-      </div></router-link
-    >
+  <div>
+    <header>
+      <router-link to="/mypage">&lt;</router-link>
+      <div class="left_box">설정</div>
+    </header>
+    <div class="content">
+      <router-link to="">
+        <div><font-awesome-icon icon="fa-solid fa-palette" /> 테마</div>
+      </router-link>
+      <router-link to="">
+        <div><font-awesome-icon icon="fa-solid fa-bell" /> 알림</div>
+      </router-link>
+    </div>
   </div>
 </template>
 
